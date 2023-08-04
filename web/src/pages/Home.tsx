@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useGetData } from "../hooks/useGetData"
 import { useNewsContext } from "../context/NewsContext";
 import NewsCard from "../components/newsCard";
+import { Col, Container, Row } from "react-bootstrap";
 
 const Home = () => {
     const {getData} = useGetData();
@@ -12,17 +13,15 @@ const Home = () => {
       }, [])
 
     return (<>
-        <div>Home</div>
-        {console.log(news.list)}
-        {
-            // news && Array.isArray(news) ? (news?.list?.map((newsItem, index) => {
-            //     return <NewsCard news={newsItem} index={index} /> 
-            // })) : (<div>no news</div>)
-            
-            news?.list?.map((newsItem, index) => {
-                    return <NewsCard news={newsItem} index={index} /> 
-                })
-        }
+        <Container>
+            <Row>
+                {                    
+                    news?.list?.map((newsItem, index) => {
+                            return <Col xl={3} className="mt-5" > <NewsCard news={newsItem} index={index} />  </Col>
+                        })
+                }
+            </Row>
+        </Container>
     </>)
 }
 

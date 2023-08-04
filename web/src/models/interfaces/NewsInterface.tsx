@@ -4,7 +4,7 @@ export interface NewsInterface {
     text: string;
     url: string;
     source_country: string;
-    image: string | null;
+    image: string | undefined;
     language: string;
     publish_date: string;
   }
