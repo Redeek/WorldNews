@@ -17,7 +17,7 @@ const Home = () => {
             <Row>
                 {                    
                     news?.list?.map((newsItem, index) => {
-                            return <Col xl={3} className="mt-5" > <NewsCard news={newsItem} index={index} />  </Col>
+                            return <Col xl={3} sm={5} xs={8} className="m-2" > <NewsCard news={newsItem} index={index} />  </Col>
                         })
                 }
             </Row>
